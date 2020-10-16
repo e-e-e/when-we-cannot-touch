@@ -3,3 +3,5 @@ build/
 .idea/
 tsconfig.tsbuildinfo
 *.log
+.env
+cred.json

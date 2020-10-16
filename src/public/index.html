@@ -73,13 +73,13 @@
         <p>*Australian postal addresses only</p>
     </section>
     <section>
-        <form>
-            <label>Your name: <input type="text"></label>
-            <label>Number and name of street: <input type="text"></label>
-            <label>City: <input type="text"></label>
-            <label>State: <input type="text"></label>
-            <label>Postcode: <input type="text"></label>
-            <label>Email address: <input type="email"></label>
+        <form action="/info" method="post">
+            <label>Your name: <input name="name" type="text"></label>
+            <label>Number and name of street: <input name="street" type="text"></label>
+            <label>City: <input name="city" type="text"></label>
+            <label>State: <input name="state" type="text"></label>
+            <label>Postcode: <input name="postcode" type="text"></label>
+            <label>Email address: <input name="email" type="email"></label>
             <input type="submit" value="Submit">
         </form>
     </section>
