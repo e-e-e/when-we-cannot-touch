@@ -17,17 +17,26 @@
             line-height: 1.4;
             font-size: 18px;
         }
+
         .container {
             margin: 0 auto;
             max-width: 700px;
             padding: 0 1rem;
         }
-        label {
-            display: block;
-        }
+
         form {
             border: black solid thin;
-            padding: 1rem;
+            padding: 0;
+        }
+
+        form > div {
+            display: flex;
+            flex-wrap: nowrap;
+            margin: 1rem;
+        }
+
+        label {
+            padding-right: 1rem;
         }
     </style>
 </head>
@@ -74,13 +83,42 @@
     </section>
     <section>
         <form action="/info" method="post">
-            <label>Your name: <input name="name" type="text"></label>
-            <label>Number and name of street: <input name="street" type="text"></label>
-            <label>City: <input name="city" type="text"></label>
-            <label>State: <input name="state" type="text"></label>
-            <label>Postcode: <input name="postcode" type="text"></label>
-            <label>Email address: <input name="email" type="email"></label>
-            <input type="submit" value="Submit">
+            <div>
+                <label for="name">Your name:</label>
+                <input name="name" id="name" type="text" required>
+            </div>
+            <div>
+                <label for="street">Number and name of street:</label>
+                <input name="street" id="street" type="text" required>
+            </div>
+            <div>
+                <label for="city">City:</label>
+                <input name="city" id="city" type="text" required>
+            </div>
+            <div>
+                <label for="state">State:</label>
+                <select name="state" id="state" required>
+                    <option value="">---</option>
+                    <option value="nsw">NSW</option>
+                    <option value="vic">VIC</option>
+                    <option value="qld">QLD</option>
+                    <option value="taz">TAZ</option>
+                    <option value="nt">NT</option>
+                    <option value="sa">SA</option>
+                    <option value="wa">WA</option>
+                </select>
+            </div>
+            <div>
+                <label for="postcode">Postcode:</label>
+                <input name="postcode" id="postcode" type="text" pattern="\d{4}" required>
+            </div>
+            <div>
+                <label for="email">Email address:</label>
+                <input name="email" id="email" type="email" required>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
         </form>
     </section>
     <footer>
