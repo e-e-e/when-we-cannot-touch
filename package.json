@@ -12,7 +12,7 @@
     "lint": "eslint src/",
     "build": "yarn lint && yarn build:clean && yarn build:server && yarn build:assets && yarn build:client",
     "build:clean": "rimraf build/",
-    "build:server": "tsc --build --force tsconfig.server.json",
+    "build:server": "tsc --build --force tsconfig.json",
     "build:server:watch": "chokidar 'src/*.ts' -c 'yarn build:server'",
     "build:client": "tsc --build --force tsconfig.client.json && mv build/client.* build/public/",
     "build:client:watch": "chokidar 'src/client.ts' -c 'yarn build:client'",
