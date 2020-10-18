@@ -1,7 +1,7 @@
 node_modules/
 build/
 .idea/
-tsconfig.tsbuildinfo
+*.tsbuildinfo
 *.log
 .env
 cred.json
