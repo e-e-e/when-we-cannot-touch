@@ -4,7 +4,7 @@ import Express from 'express'
 import helmet from 'helmet/dist'
 import path from 'path'
 import bodyParser from 'body-parser'
-import {GoogleSpreadsheet} from 'google-spreadsheet'
+import { GoogleSpreadsheet } from 'google-spreadsheet'
 import * as winston from 'winston'
 import * as expressWinston from 'express-winston'
 
@@ -50,7 +50,7 @@ app.use(
     meta: true,
   }),
 )
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(Express.static(path.join(__dirname, 'public')))
 
@@ -58,9 +58,9 @@ app.post('/info', (req, res) => {
   console.log(req.body)
   const error = validateInput(req.body)
   if (error) {
-    return res.status(400).json({status: 'error', error})
+    return res.status(400).json({ status: 'error', error })
   }
-  res.status(200).send({status: 'ok'})
+  res.status(200).send({ status: 'ok' })
   // addItem(validData)
   //   .then(() => {
   //     res.sendStatus(200)
