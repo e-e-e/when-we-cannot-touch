@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node build/index.js",
-    "start:watch": "nodemon --watch build --exec node build/index.js",
+    "start:watch": "NODE_ENV=development nodemon --watch build --exec node build/index.js",
     "dev": "yarn build && yarn concurrently 'yarn start:watch' 'yarn build:server:watch' 'yarn build:client:watch' 'yarn build:assets:watch'",
     "lint": "eslint src/",
     "build": "yarn lint && yarn build:clean && yarn build:server && yarn build:assets && yarn build:client",
@@ -29,6 +29,7 @@
     "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "helmet": "^4.1.1",
     "nodemon": "^2.0.5",
     "prettier": "^2.1.2",
     "rimraf": "^3.0.2",
@@ -39,6 +40,8 @@
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "google-spreadsheet": "^3.0.13"
+    "express-winston": "^4.0.5",
+    "google-spreadsheet": "^3.0.13",
+    "winston": "^3.3.3"
   }
 }

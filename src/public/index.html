@@ -82,7 +82,7 @@
         <p>*Australian postal addresses only</p>
     </section>
     <section>
-        <form action="/info" method="post">
+        <form id="form" action="/" method="post">
             <div>
                 <label for="name">Your name:</label>
                 <input name="name" id="name" type="text" required>
@@ -117,8 +117,9 @@
                 <input name="email" id="email" type="email" required>
             </div>
             <div>
-                <input type="submit" value="Submit">
+                <input id="submit" type="submit" value="Submit">
             </div>
+            <div id="error"></div>
         </form>
     </section>
     <footer>
