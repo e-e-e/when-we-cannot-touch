@@ -8,11 +8,11 @@
   "scripts": {
     "start": "node build/index.js",
     "start:watch": "nodemon --watch build --exec node build/index.js",
-    "dev": "yarn concurrently 'yarn start:watch' 'yarn build:server:watch' 'yarn build:client:watch' 'yarn build:assets:watch'",
+    "dev": "yarn build && yarn concurrently 'yarn start:watch' 'yarn build:server:watch' 'yarn build:client:watch' 'yarn build:assets:watch'",
     "lint": "eslint src/",
     "build": "yarn lint && yarn build:clean && yarn build:server && yarn build:assets && yarn build:client",
     "build:clean": "rimraf build/",
-    "build:server": "tsc --build --force tsconfig.json",
+    "build:server": "tsc --build --force tsconfig.server.json",
     "build:server:watch": "chokidar 'src/*.ts' -c 'yarn build:server'",
     "build:client": "tsc --build --force tsconfig.client.json && mv build/client.* build/public/",
     "build:client:watch": "chokidar 'src/client.ts' -c 'yarn build:client'",
