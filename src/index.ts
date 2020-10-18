@@ -27,7 +27,7 @@ async function addItem(data: InputFormData) {
   })
   await doc.loadInfo()
   const sheet = doc.sheetsByIndex[0]
-  await sheet.addRow([Math.random()])
+  await sheet.addRow([data.name, data.street, data.city, data.postcode, data.state, data.email])
 }
 
 function validateInput(data: InputFormData): string | null {
@@ -60,15 +60,14 @@ app.post('/info', (req, res) => {
   if (error) {
     return res.status(400).json({ status: 'error', error })
   }
-  res.status(200).send({ status: 'ok' })
-  // addItem(validData)
-  //   .then(() => {
-  //     res.sendStatus(200)
-  //   })
-  //   .catch((e) => {
-  //     console.log(e)
-  //     res.sendStatus(500)
-  //   })
+  addItem(req.body)
+    .then(() => {
+      res.status(200).send({ status: 'ok' })
+    })
+    .catch((e) => {
+      console.log(e)
+      return res.status(500).json({ status: 'error', error: 'Unknown server error.' })
+    })
 })
 
 app.listen(PORT, () => {
