@@ -14,28 +14,65 @@
             padding: 0;
             margin: 0;
             font-family: sans-serif;
-            line-height: 1.4;
-            font-size: 18px;
+            line-height: 1.45;
+            font-size: 21px;
+            letter-spacing: 0.05rem;
+        }
+
+        hr {
+            border: none;
+            border-bottom: black thin solid;
+            transform: scale(1.1) rotate(1deg);
+            animation: rock alternate 5s infinite ease-in-out;
+        }
+
+        .heading {
+            font-size: 2rem;
+        }
+
+        input, select {
+            font-size: 21px;
+            font-style: italic;
+            padding: 0 1rem;
+
+        }
+
+        input {
+            width: 100%;
+        }
+
+        input[type=submit] {
+            margin: 0 0 0 auto;
         }
 
         .container {
             margin: 0 auto;
             max-width: 700px;
-            padding: 0 1rem;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footnotes {
+            text-align: right;
+        }
+
+        p {
+            margin: 2rem 0;
         }
 
         form {
-            border: black solid thin;
-            padding: 0;
+            display: block;
+            margin: 5rem 0 0;
+            position: relative;
         }
 
         form > div {
             display: flex;
             flex-wrap: nowrap;
-            margin: 1rem;
+            margin: 1rem 2rem;
         }
 
         label {
+            width: 100%;
             padding-right: 1rem;
         }
 
@@ -50,24 +87,40 @@
         .success {
             color: dodgerblue;
         }
+
+        .border {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: black thin solid;
+            transform: scale(1.1) rotate(1deg);
+            margin: 0;
+            animation: rock alternate 5s infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes rock {
+            from {transform: scale(1.1) rotate(1deg);}
+            to {transform: scale(1.1) rotate(-1deg);}
+        }
+
     </style>
 </head>
 <body>
 <div class="container">
-    <header>
-        <h1>When we cannot touch</h1>
-    </header>
     <section>
 
-        <p>When we cannot touch, art is the object that passes between us:</p>
+        <p>
+            <span class="heading">When we cannot touch,</span> art is the object that passes between us: an art and
+            correspondence project,
+            with
+        </p>
+        <p>Susie Anderson,<br/> Beth Caird,<br/> Brain Fuata,<br/> Angela Goh,<br/> Susan Jacobs<br/> Ella Sutherland,
+        </p>
+        <p> and a postscript by Charlie Sofo.</p>
 
-        <p>an art and correspondence project, with</p>
-
-        <p>Susie Anderson, Beth Caird, Brain Fuata, Angela Goh, Susan Jacobs and Ella Sutherland,</p>
-
-        <p>and a postscript by Charlie Sofo.</p>
-
-
+        <hr>
         <p>‘When we cannot touch, art is the object that passes between us.’ This project draws inspiration from this
             recent
             observation by writer Olivia Laing and from ‘Mail Art’, a movement which began in the 1960s and which, over
@@ -77,8 +130,7 @@
 
         <p>A group of artists and writers have been invited to enter into an exchange with a known or fictional
             correspondent, and then share some aspect of this colloquy in two-dimensional form with a wider audience,
-            via
-            postal distribution.</p>
+            via postal distribution.</p>
 
         <p>This offline, slow-time gesture of solidarity provides a means with which to come together when physical
             proximity is not possible. The act of receiving a letter in this digital age seems almost archaic, and yet,
@@ -88,19 +140,18 @@
             next—has
             made thinking, the act of making sense, nearly impossible, its simple proposition is to enrich the
             everyday.</p>
-        <p>Register your details below to join the postal mailing list. The first 100 registrants* will receive</p>
-        <p>the project by post in November and December 2020.</p>
+        <p>Register your details below to join the postal mailing list. The first 100 registrants* will receive the
+            project by post in November and December 2020.</p>
 
-        <p>*Australian postal addresses only</p>
-    </section>
-    <section>
         <form id="form" action="/" method="post">
+            <div class="border" ></div>
+            <div></div>
             <div>
                 <label for="name">Your name:</label>
                 <input name="name" id="name" type="text" required>
             </div>
             <div>
-                <label for="street">Number and name of street:</label>
+                <label for="street">Street:</label>
                 <input name="street" id="street" type="text" required>
             </div>
             <div>
@@ -128,16 +179,23 @@
                 <label for="email">Email address:</label>
                 <input name="email" id="email" type="email" required>
             </div>
+            <div></div>
             <div>
                 <input id="submit" type="submit" value="Submit">
             </div>
             <div id="message"></div>
         </form>
+        <div class="footnotes">
+            <sub>*Australian postal addresses only</sub>
+        </div>
     </section>
     <footer>
         <p>Organised by Melissa Ratliff and Bree Richards (curators) with Benjamin Forster (website).</p>
-        <p><a href="mailto:mail@whenwecannottouch.art">mail [at] whenwecannottouch [dot] art</a></p>
-        <p><a href="" target="_blank">IG when_we_cannot_touch</a></p>
+        <hr>
+        <p>
+            Contact: <a href="mailto:mail@whenwecannottouch.art">mail [at] whenwecannottouch [dot] art</a><br/>
+            Insta: <a href="https://www.instagram.com/when_we_cannot_touch/" target="_blank">when_we_cannot_touch</a>
+        </p>
     </footer>
     <script src="./client.js"></script>
 </div>

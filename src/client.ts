@@ -37,8 +37,9 @@ function disableForm() {
 
 function processForm(e: Event) {
   e.preventDefault()
-  if (submitting) return
-  if (!(e.target instanceof HTMLFormElement)) return
+  e.stopPropagation()
+  if (submitting) return false
+  if (!(e.target instanceof HTMLFormElement)) return false
   submitting = true
   setProcessingMessage()
   const data = new FormData(e.target)
