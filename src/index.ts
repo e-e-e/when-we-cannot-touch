@@ -8,7 +8,7 @@ import { GoogleSpreadsheet } from 'google-spreadsheet'
 import * as winston from 'winston'
 import * as expressWinston from 'express-winston'
 
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 
 type InputFormData = {
   name: string
