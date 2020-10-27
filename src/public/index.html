@@ -5,6 +5,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Primary Meta Tags -->
+    <title>When we cannot touch, art is the object that passes between us.</title>
+    <meta name="title" content="When we cannot touch, art is the object that passes between us.">
+    <meta name="description"
+          content="When we cannot touch, art is the object that passes between us: an offline, slow-time, art and correspondence project.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://whenwecannottouch.art/">
+    <meta property="og:title" content="When we cannot touch, art is the object that passes between us.">
+    <meta property="og:description"
+          content="When we cannot touch, art is the object that passes between us: an offline, slow-time, art and correspondence project.">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://whenwecannottouch.art/">
+    <meta property="twitter:title" content="When we cannot touch, art is the object that passes between us.">
+    <meta property="twitter:description"
+          content="When we cannot touch, art is the object that passes between us: an offline, slow-time, art and correspondence project.">
+    <meta property="twitter:image" content="">
     <title>When we cannot touch</title>
     <style>
         html, body {
@@ -24,10 +45,18 @@
             border-bottom: black thin solid;
             transform: scale(1.1) rotate(1deg);
             animation: rock alternate 5s infinite ease-in-out;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-background-clip: content-box;
+            background-clip: content-box;
         }
 
         .heading {
             font-size: 2rem;
+        }
+
+        .subheading {
+            font-size: 1.3rem;
         }
 
         input, select {
@@ -38,17 +67,19 @@
         }
 
         input {
-            width: 100%;
+            display: flex;
+            flex-grow: 1;
         }
 
         input[type=submit] {
             margin: 0 0 0 auto;
+            flex-grow: 0;
         }
 
         .container {
             margin: 0 auto;
             max-width: 700px;
-            padding: 3rem 2rem 1rem;
+            padding: 3rem 2rem 4rem;
         }
 
         .footnotes {
@@ -67,13 +98,22 @@
 
         form > div {
             display: flex;
-            flex-wrap: nowrap;
             margin: 1rem 2rem;
+            flex-direction: row;
+        }
+
+        @media screen and (max-width: 660px) {
+            form > div {
+                margin: 1rem;
+                flex-direction: column;
+            }
         }
 
         label {
-            width: 100%;
-            padding-right: 1rem;
+            flex-grow: 1;
+            flex-basis: 40%;
+            display: flex;
+            white-space: nowrap;
         }
 
         .processing {
@@ -98,13 +138,26 @@
             animation: rock alternate 5s infinite;
             z-index: -1;
             pointer-events: none;
+            padding: 1px;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-background-clip: content-box;
+            background-clip: content-box;
         }
 
         @keyframes rock {
-            from {transform: scale(1.1) rotate(1deg);}
-            to {transform: scale(1.1) rotate(-1deg);}
+            from {
+                transform: scale(1.1) rotate(1deg);
+            }
+            to {
+                transform: scale(1.1) rotate(-1deg);
+            }
         }
 
+        .logos {
+            padding-top: 1rem;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -112,16 +165,18 @@
     <section>
 
         <p>
-            <span class="heading">When we cannot touch,</span> art is the object that passes between us: an art and
+            <span class="heading">When we cannot touch,</span><span class="subheading"> art is the object that passes between us:</span>
+            an art and
             correspondence project,
             with
         </p>
-        <p>Susie Anderson,<br/> Beth Caird,<br/> Brain Fuata,<br/> Angela Goh,<br/> Susan Jacobs<br/> Ella Sutherland,
+        <p>Susie Anderson,<br/> Beth Caird,<br/> Brain Fuata,<br/> Angela Goh,<br/> Susan Jacobs,<br/> Ella Sutherland,
         </p>
         <p> and a postscript by Charlie Sofo.</p>
 
         <hr>
-        <p>‘When we cannot touch, art is the object that passes between us.’ This project draws inspiration from this
+        <p>‘When we cannot touch, art is the object that passes between us.’ This project draws its title and
+            inspiration from a
             recent
             observation by writer Olivia Laing and from ‘Mail Art’, a movement which began in the 1960s and which, over
             time, has taken a variety of forms: postcards, poems, drawings, collages, prints, faxes, emails and blogs. A
@@ -144,7 +199,7 @@
             project by post in November and December 2020.</p>
 
         <form id="form" action="/" method="post">
-            <div class="border" ></div>
+            <div class="border"></div>
             <div></div>
             <div>
                 <label for="name">Your name:</label>
@@ -165,7 +220,7 @@
                     <option value="nsw">NSW</option>
                     <option value="vic">VIC</option>
                     <option value="qld">QLD</option>
-                    <option value="taz">TAZ</option>
+                    <option value="tas">TAS</option>
                     <option value="nt">NT</option>
                     <option value="sa">SA</option>
                     <option value="wa">WA</option>
@@ -190,12 +245,20 @@
         </div>
     </section>
     <footer>
-        <p>Organised by Melissa Ratliff and Bree Richards (curators) with Benjamin Forster (website).</p>
+        <p>Organised by Melissa Ratliff and Bree Richards with Benjamin Forster (website) and supported by the NSW
+            Government through Create NSW. It was initiated on the unceded lands of the Gadigal
+            and Worimi peoples. We extend our respects to the Traditional Custodians of the lands and waters on which it
+            was made and passes through; to all elders past, present and emerging; and to First Nations peoples around
+            the world.</p>
         <hr>
         <p>
             Contact: <a href="mailto:mail@whenwecannottouch.art">mail [at] whenwecannottouch [dot] art</a><br/>
-            Insta: <a href="https://www.instagram.com/when_we_cannot_touch/" target="_blank">when_we_cannot_touch</a>
+            Instagram: <a href="https://www.instagram.com/when_we_cannot_touch/"
+                          target="_blank">when_we_cannot_touch</a>
         </p>
+        <div class="logos">
+            <img alt="Create NSW Logo" src="/nsw_logo.png" width="100"/>
+        </div>
     </footer>
     <script src="./client.js"></script>
 </div>
