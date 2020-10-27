@@ -7,6 +7,7 @@ import bodyParser from 'body-parser'
 import { GoogleSpreadsheet } from 'google-spreadsheet'
 import * as winston from 'winston'
 import * as expressWinston from 'express-winston'
+import sslRedirect from 'heroku-ssl-redirect'
 
 const PORT = process.env.PORT || 8080
 
@@ -43,6 +44,7 @@ function validateInput(data: InputFormData): string | null {
 
 const app = Express()
 app.use(helmet())
+app.use(sslRedirect())
 app.use(
   expressWinston.logger({
     transports: [new winston.transports.Console()],
