@@ -29,6 +29,7 @@
     <title>When we cannot touch</title>
     <style>
         html, body {
+            position: relative;
             width: 100%;
             height: auto;
             min-height: 100%;
@@ -78,6 +79,7 @@
         }
 
         .container {
+            position: relative;
             margin: 0 auto;
             max-width: 700px;
             padding: 3rem 2rem 4rem;
@@ -89,6 +91,9 @@
 
         p {
             margin: 2rem 0;
+        }
+        sub {
+            line-height: initial;
         }
 
         form {
@@ -137,7 +142,6 @@
             transform: scale(1.1) rotate(1deg);
             margin: 0;
             animation: rock alternate 5s infinite;
-            z-index: -1;
             pointer-events: none;
             padding: 1px;
             -webkit-backface-visibility: hidden;
@@ -145,6 +149,25 @@
             -webkit-background-clip: content-box;
             background-clip: content-box;
             outline: 1px solid transparent;
+        }
+
+        #signatures {
+            /*position: relative;*/
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .security {
+            animation: fadein ease-in 3s normal ;
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes rock {
@@ -163,6 +186,7 @@
     </style>
 </head>
 <body>
+<div id="signatures"></div>
 <div class="container">
     <section>
 
@@ -241,9 +265,10 @@
                 <input id="submit" type="submit" value="Submit">
             </div>
             <div id="message"></div>
+            <div><sub>Your information will only be used for this project and will not be retained.</sub></div>
         </form>
         <div class="footnotes">
-            <sub>*Australian postal addresses only</sub>
+            <sub>*Australian postal addresses only.</sub>
         </div>
     </section>
     <footer>

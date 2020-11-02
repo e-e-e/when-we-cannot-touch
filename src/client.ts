@@ -17,7 +17,8 @@ function setProcessingMessage() {
 function setSuccessMessage() {
   const message = document.getElementById('message')
   if (!message) return
-  message.innerHTML = 'Successfully submited'
+  message.innerHTML =
+    'Thank you! We have received your details. If you are one of the first 100 people to register, you can expect to receive mail in the coming weeks.'
   message.className = 'success'
 }
 
@@ -75,3 +76,29 @@ function processForm(e: Event) {
 }
 
 document.getElementById('form')?.addEventListener('submit', processForm)
+
+for (let i =1; i <= 7; i ++ ) {
+  setTimeout(() => {
+    createSecurity(i)
+  }, 500 * i)
+}
+
+function addImageToDom(img: HTMLImageElement) {
+  const div = document.createElement('div')
+  div.appendChild(img)
+  div.style.position = 'absolute'
+  div.style.top = `${(Math.random() * 80) + 10}%`
+  div.style.left = `${(Math.random() * 80) + 10}%`
+  div.style.zIndex = '-1'
+  div.className = 'security'
+  const rotation = Math.random() * 360
+  div.style.transform = `rotate(${rotation}deg)`
+
+  document.getElementById('signatures')?.appendChild(div)
+}
+
+function createSecurity(index: number) {
+  const img = new Image()
+  img.onload = () => addImageToDom(img)
+  img.src = `./imgs/WWCT_01_Security-Window${index}.png`
+}
