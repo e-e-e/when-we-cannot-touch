@@ -93,7 +93,7 @@ function addImageToDom(img: HTMLImageElement) {
   div.className = 'security'
   const scale = window.screen.width < 660 ? 0.75 : 1
   const rotation = Math.random() * 360
-  div.style.transform = `translateX(-100px) rotate(${rotation}deg) scale(${scale})`
+  div.style.transform = `translateX(-${img.width * scale}px) rotate(${rotation}deg) scale(${scale})`
 
   document.getElementById('signatures')?.appendChild(div)
 }
